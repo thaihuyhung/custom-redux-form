@@ -1,0 +1,33 @@
+@import '../../scss/variable.scss';
+
+.form {
+  width: 540px;
+  padding: 16px;
+  box-sizing: border-box;
+  position: relative;
+  &__loading-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  &--loading {
+    > *:not(.form__loading-wrapper) {
+      opacity: 0.9;
+      filter: blur(1px);
+    }
+  }
+}
+
+@media #{$screen-xs} {
+  .form {
+    width: 100%;
+  }
+}

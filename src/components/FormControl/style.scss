@@ -1,0 +1,44 @@
+.form-control {
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  &--valid {
+    .text-field {
+      &__input {
+        border-color: #28a745;
+        &:focus {
+          box-shadow: 0 0 0 3px rgba(40,167,69,.25);
+        }
+      }
+      &_hint {
+        animation: hint-text-animation 0.25s linear;
+        color: #28a745;
+      }
+    }
+  }
+  &--error {
+    .text-field {
+      &__input {
+        border-color: #dc3545;
+        &:focus {
+          box-shadow: 0 0 0 3px rgba(220,53,69,.25);
+        }
+      }
+      &__hint {
+        animation: hint-text-animation 0.25s linear;
+        color: #dc3545;
+      }
+    }
+  }
+}
+
+@keyframes hint-text-animation {
+  0%   {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
